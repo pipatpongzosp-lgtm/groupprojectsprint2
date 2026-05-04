@@ -6,6 +6,7 @@ import BillingSummary from "../../component/cashier/BillingSummary";
 import PaymentMethodSelector from "../../component/cashier/PaymentMethodSelector";
 import CashCalculator from "../../component/cashier/CashCalculator";
 import CheckoutButton from "../../component/cashier/CheckoutButton";
+import Sidebar from "../../component/shared/SideBar";
 
 const CheckoutPage = () => {
   // 1. Define State (The Data)
@@ -67,57 +68,60 @@ const CheckoutPage = () => {
 
   // 4. Render
   return (
-    <div className="flex flex-col h-screen p-6 bg-[#eeeeee] font-['IBM_Plex_Sans_Thai']">
-      <OrderHeader
-        orderNo="#SP-8829"
-        tableType="DINE-IN: T-02"
-        dateStr="9 APR 2024 | 14:30"
-      />
+    <div className="flex bg-[#eeeeee] min-h-screen font-['IBM_Plex_Sans_Thai']">
+      <Sidebar />
+      <main className="flex-1 ml-60 flex flex-col h-screen p-6 md:p-10">
+        <OrderHeader
+          orderNo="#SP-8829"
+          tableType="DINE-IN: T-02"
+          dateStr="9 APR 2024 | 14:30"
+        />
 
-      <div className="flex flex-1 gap-6 overflow-hidden min-h-0">
-        {/* Left Side: Items */}
-        <div className="flex-[1.2] flex flex-col min-w-0">
-          <OrderItemList
-            items={items}
-            onRemoveItem={handleRemoveItem}
-            discount={discount}
-            setDiscount={setDiscount}
-            serviceCharge={serviceChargeRate}
-            setServiceCharge={setServiceChargeRate}
-          />
-        </div>
-
-        {/* Right Side: Payment */}
-        <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-2 pb-4">
-          <BillingSummary
-            rawSubtotal={rawSubtotal}
-            discountAmount={discount}
-            scAmount={scAmount}
-            taxAmount={taxAmount}
-            finalTotal={finalTotal}
-          />
-
-          <PaymentMethodSelector
-            selectedMethod={paymentType}
-            onSelectMethod={setPaymentType}
-          />
-
-          <CashCalculator
-            paymentType={paymentType}
-            payAmount={payAmount}
-            setPayAmount={setPayAmount}
-            finalTotal={finalTotal}
-            changeAmount={changeAmount}
-          />
-
-          <div className="mt-auto pt-2">
-            <CheckoutButton
-              onCheckout={handleCheckout}
-              disabled={isCheckoutDisabled}
+        <div className="flex flex-1 gap-6 overflow-hidden min-h-0">
+          {/* Left Side: Items */}
+          <div className="flex-[1.2] flex flex-col min-w-0">
+            <OrderItemList
+              items={items}
+              onRemoveItem={handleRemoveItem}
+              discount={discount}
+              setDiscount={setDiscount}
+              serviceCharge={serviceChargeRate}
+              setServiceCharge={setServiceChargeRate}
             />
           </div>
+
+          {/* Right Side: Payment */}
+          <div className="flex-1 flex flex-col gap-4 overflow-y-auto pr-2 pb-4">
+            <BillingSummary
+              rawSubtotal={rawSubtotal}
+              discountAmount={discount}
+              scAmount={scAmount}
+              taxAmount={taxAmount}
+              finalTotal={finalTotal}
+            />
+
+            <PaymentMethodSelector
+              selectedMethod={paymentType}
+              onSelectMethod={setPaymentType}
+            />
+
+            <CashCalculator
+              paymentType={paymentType}
+              payAmount={payAmount}
+              setPayAmount={setPayAmount}
+              finalTotal={finalTotal}
+              changeAmount={changeAmount}
+            />
+
+            <div className="mt-auto pt-2">
+              <CheckoutButton
+                onCheckout={handleCheckout}
+                disabled={isCheckoutDisabled}
+              />
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 };
