@@ -53,25 +53,26 @@ export default function MenuList({ order, list }) {
     return (
         <div className={` m-2 border rounded shadow-sm p-2 ${(list.status==="cancel")?"bg-red-500":"bg-gray-100"}`}>
             <div className="text-xs text-gray-500 font-bold">Order ID: {order.orderId}</div>
-            <div
-                className={`p-2 cursor-pointer rounded transition ${
-                    list.status === "Cook" ? "bg-orange-100 hover:bg-orange-200" : "hover:bg-gray-100"
-                }`}
+            <div className={`p-2 rounded transition ${
+                    (list.status != "finished")&&(list.status != "cancel") ? "bg-orange-100 hover:bg-orange-200 cursor-pointer" : "bg-gray-200 cursor-default"
+                }`} 
                 onClick={countTimeHandler}
             >
                 <div className={"flex justify-between items-center "}>
                     <span>{list.id} : {list.name} (x{list.quantity})</span>
-                    <span className={`font-mono font-bold ${countdownTime < 10 ? "text-red-600" : "text-blue-600"}`}>
-                        {countdownTime}s
+                    
+                    <span className={`font-mono text-[2vh] font-bold ${list.status==="Cook"?countdownTime < 10 ? "text-red-600" : "text-blue-600":"text-black"}`}>
+                        {`${(list.status!="Cook")?"estimate cooking time ": "cooking time reamin "}`} :{countdownTime}s
                     </span>
+                    
                     { (list.status!="finished"&&list.status!="cancel")?
-                    <button className="bg-gray-500 text-amber-50 hover:bg-red-300 hover:text-black transition" onClick={(e)=>{e.stopPropagation();
+                    <button className="bg-gray-500 text-amber-50 hover:bg-red-300 hover:text-black  cursor-pointer transition" onClick={(e)=>{e.stopPropagation();
                         wantCancel();}}>🗑️</button>:
-                        <button onClick={(e)=>{e.stopPropagation();
+                    <button className=" cursor-pointer" onClick={(e)=>{e.stopPropagation();
                         wantRedoMenu();}}>🔁</button>
                     }
                 </div>
-                <div className="text-[10px] uppercase mt-1">Status: {list.status}</div>
+                <div className={`text-[5ph] font-bold uppercase mt-1 ${list.status==="Cook"?"text-red-600" : "text-blue-600"}`}>Status: {list.status}</div>
             </div>
         </div>
     );
