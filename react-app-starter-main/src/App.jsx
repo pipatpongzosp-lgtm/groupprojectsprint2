@@ -1,12 +1,15 @@
-import { useState } from 'react'
+
 import CookBoard from './component/CookBoard'
+import Index from './testfeature/Index'
 
 export default function App() {
+
  
 
   return (
     <div>
-  <CookBoard />
+  {/* <CookBoard /> */}
+  <Index />
     </div>
   )
 }
