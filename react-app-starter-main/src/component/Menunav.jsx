@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const DataRow = ({ rowId, imageUrl, data1, data2, data3, data4, onButton1, onButton2, onButton3 }) => {
   return (
@@ -53,18 +54,18 @@ const Header = () => {
       <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="#" className="text-2xl font-bold text-accent">
+          <Link to="/" className="text-2xl font-bold text-accent">
             LOGO
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8 items-center">
           <ul className="flex space-x-6">
-            <li><a href="/" className="hover:text-secondary transition duration-300">Home</a></li>
-            <li><a href="/menu" className="hover:text-secondary transition duration-300">Menu</a></li>
-            <li><a href="/order" className="hover:text-secondary transition duration-300">Order</a></li>
-            <li><a href="#" className="hover:text-secondary transition duration-300">Contact</a></li>
+            <li><Link to="/" className="hover:text-secondary transition duration-300">Home</Link></li>
+            <li><Link to="/menu" className="hover:text-secondary transition duration-300">Menu</Link></li>
+            <li><Link to="/order" className="hover:text-secondary transition duration-300">Order</Link></li>
+            <li><Link to="#" className="hover:text-secondary transition duration-300">Contact</Link></li>
           </ul>
           <button className="bg-secondary hover:bg-accent text-neutral px-6 py-2 rounded-full font-semibold transition duration-300">
             Sign In
@@ -87,10 +88,10 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className={`${isMenuOpen ? 'block' : 'hidden'} md:hidden bg-primary border-t border-accent/20`}>
         <ul className="flex flex-col p-4 space-y-4">
-          <li><a href="/" className="block hover:text-secondary transition duration-300">Home</a></li>
-          <li><a href="#" className="block hover:text-secondary transition duration-300">Menu</a></li>
-          <li><a href="/order" className="block hover:text-secondary transition duration-300">Order</a></li>
-          <li><a href="#" className="block hover:text-secondary transition duration-300">Contact</a></li>
+          <li><Link to="/" className="block hover:text-secondary transition duration-300">Home</Link></li>
+          <li><Link to="/menu" className="block hover:text-secondary transition duration-300">Menu</Link></li>
+          <li><Link to="/order" className="block hover:text-secondary transition duration-300">Order</Link></li>
+          <li><Link to="#" className="block hover:text-secondary transition duration-300">Contact</Link></li>
           <li>
             <button className="w-full bg-secondary hover:bg-accent text-neutral px-6 py-2 rounded-lg font-semibold transition duration-300">
               Sign In
@@ -102,8 +103,8 @@ const Header = () => {
   );
 };
 
-const Index2 = () => {
-  const [rows, setRows] = useState([
+const Menunav = () => {
+  const [rows] = useState([
     { id: 1, image: '', data: ['Data 1', 'Data 2', 'Data 3', 'Data 4'] },
     { id: 2, image: '', data: ['Data 1', 'Data 2', 'Data 3', 'Data 4'] },
     { id: 3, image: '', data: ['Data 1', 'Data 2', 'Data 3', 'Data 4'] },
@@ -149,4 +150,4 @@ const Index2 = () => {
   );
 };
 
-export default Index2;
+export default Menunav;
