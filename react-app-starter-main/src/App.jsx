@@ -1,13 +1,8 @@
-import { useState } from 'react'
-import CookBoard from './component/CookBoard'
+import Index2 from './component/Index2'
 
 export default function App() {
- 
-
   return (
-    <div>
-  <CookBoard />
-    </div>
+    <Index2 />
   )
 }
 
