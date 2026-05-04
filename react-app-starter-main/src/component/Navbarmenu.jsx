@@ -23,7 +23,7 @@ const Navbarmenu = () => {
             <li><Link to="#" className="hover:text-secondary transition duration-300">Contact</Link></li>
           </ul>
           <button className="bg-secondary hover:bg-accent text-neutral px-6 py-2 rounded-full font-semibold transition duration-300">
-            Sign In
+            <Link to="/login">Sign In</Link>
           </button>
         </div>
 
@@ -49,7 +49,7 @@ const Navbarmenu = () => {
           <li><Link to="#" className="block hover:text-secondary transition duration-300">Contact</Link></li>
           <li>
             <button className="w-full bg-secondary hover:bg-accent text-neutral px-6 py-2 rounded-lg font-semibold transition duration-300">
-              Sign In
+              <Link to="/login">Sign In</Link>
             </button>
           </li>
         </ul>
