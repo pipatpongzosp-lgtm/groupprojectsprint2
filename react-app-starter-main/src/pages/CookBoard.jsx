@@ -1,33 +1,42 @@
-import { useContext, useState } from "react"
+import { useContext, useState } from "react";
 import { OrdersContext } from "../context/ordersContext/OrdersContext";
 import MenuList from "../component/MenuList";
 
 export default function CookBoard() {
-    const { orderList } = useContext(OrdersContext);
+  const { orderList } = useContext(OrdersContext);
 
-    const orders = orderList.map((element) => {
-        const orderDetail = {
-            orderId: element.id,
-            List: element.orderList
-        };
-        return (orderDetail);
-    });
+  const orders = orderList.map((element) => {
+    const orderDetail = {
+      orderId: element.id,
+      List: element.orderList,
+    };
+    return orderDetail;
+  });
 
-    const showList = (whichBoard) => (
-        orders.flatMap((e) =>
-            e.List.filter((list) => {
-                if (whichBoard === "finished") return list.status === "finished" || list.status === "cancel";
-                if (whichBoard === "doing") return list.status === "Cook" || list.status === "InKitchen";
-                return false;
-            }).map((list) => (
-                whichBoard === "finished" ? (
-                 <MenuList key={`${whichBoard}-${e.orderId}-${list.id}`} order={e} list={list}/>
-                ) : (
-                 <MenuList key={`${whichBoard}-${e.orderId}-${list.id}`} order={e} list={list}/>
-                )
-            ))
-        )
-    )
+  const showList = (whichBoard) =>
+    orders.flatMap((e) =>
+      e.List.filter((list) => {
+        if (whichBoard === "finished")
+          return list.status === "finished" || list.status === "cancel";
+        if (whichBoard === "doing")
+          return list.status === "Cook" || list.status === "InKitchen";
+        return false;
+      }).map((list) =>
+        whichBoard === "finished" ? (
+          <MenuList
+            key={`${whichBoard}-${e.orderId}-${list.id}`}
+            order={e}
+            list={list}
+          />
+        ) : (
+          <MenuList
+            key={`${whichBoard}-${e.orderId}-${list.id}`}
+            order={e}
+            list={list}
+          />
+        ),
+      ),
+    );
 
     return (
         <div className="flex flex-row justify-center gap-[5vh] bg-gray-200 min-h-screen min-w-screen 

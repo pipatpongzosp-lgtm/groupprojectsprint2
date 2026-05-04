@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Navbarmenu from './Navbarmenu';
 
 const DataRow = ({ rowId, imageUrl, data1, data2, data3, data4, onButton1, onButton2, onButton3 }) => {
   return (
@@ -103,7 +103,7 @@ const Header = () => {
   );
 };
 
-const Menunav = () => {
+const Buttonmenu = () => {
   const [rows] = useState([
     { id: 1, image: '', data: ['Data 1', 'Data 2', 'Data 3', 'Data 4'] },
     { id: 2, image: '', data: ['Data 1', 'Data 2', 'Data 3', 'Data 4'] },
@@ -119,7 +119,7 @@ const Menunav = () => {
 
   return (
     <div className="min-h-screen bg-neutral">
-      <Header />
+      <Navbarmenu />
       <main className="p-4 md:p-8 lg:px-20 max-w-[1600px] mx-auto mt-4 mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left Box (Empty) */}
@@ -150,4 +150,4 @@ const Menunav = () => {
   );
 };
 
-export default Menunav;
+export default Buttonmenu;
