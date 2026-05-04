@@ -25,7 +25,7 @@ const OrderCard = ({ order, onPrintBill, onMarkAsCompleted }) => {
         </div>
 
         <p className="text-[#888888] text-sm font-medium">
-          <span className="text-[#e4002b] font-bold">{order.type}</span>
+          <span className="text-[#242424] font-bold">{order.type}</span>
           {order.table && ` • TABLE: ${order.table}`}
           <span className="mx-2">|</span>
           <span className="text-[#242424] font-bold">
@@ -39,7 +39,7 @@ const OrderCard = ({ order, onPrintBill, onMarkAsCompleted }) => {
         {/* ปุ่ม Edit (ไปหน้า Checkout แบบไม่ล็อกสถานะ) */}
         <button
           onClick={() => onPrintBill(order.orderId)}
-          className="p-3 border-2 border-[#242424] rounded bg-white text-[#242424] hover:bg-[#eeeeee] transition-colors"
+          className="p-2 border-2 border-none rounded bg-[#cccccc] text-[#242424] hover:bg-[#242424] hover:text-white transition-all"
           title="Edit Order"
         >
           <Pencil size={20} strokeWidth={2.5} />
@@ -49,14 +49,16 @@ const OrderCard = ({ order, onPrintBill, onMarkAsCompleted }) => {
         {isPaid ? (
           <button
             onClick={() => onMarkAsCompleted(order.orderId)}
-            className="bg-[#242424] text-white font-['IBM_Plex_Sans_Thai'] font-bold uppercase px-8 py-3 rounded border-2 border-[#242424] hover:bg-[#3a3a3a] transition-all shadow-[0_4px_0_#000000] active:translate-y-1 active:shadow-none"
+            className="bg-[#28a745] text-white font-['IBM_Plex_Sans_Thai'] font-bold uppercase px-8 py-3 rounded border-[3px] border-[#28a745] hover:bg-[#218838] transition-all shadow-[0_4px_0_#1e7e34] active:translate-y-1 active:shadow-none"
           >
-            PAID (CLEAR TABLE)
+            PAID
+            <br />
+            (CLEAR TABLE)
           </button>
         ) : (
           <button
             onClick={() => onPrintBill(order.orderId)}
-            className="bg-[#e4002b] text-white font-['IBM_Plex_Sans_Thai'] font-bold uppercase px-8 py-3 rounded border-2 border-[#e4002b] hover:bg-[#cc0026] transition-all shadow-[0_4px_0_#800018] active:translate-y-1 active:shadow-none"
+            className="bg-white text-[#242424] font-['IBM_Plex_Sans_Thai'] font-bold uppercase px-8 py-3 rounded border-[3px] border-[#242424] hover:bg-[#242424] hover:text-white transition-all shadow-[0_4px_0_#242424] active:translate-y-1 active:shadow-none"
           >
             PRINT BILL
           </button>

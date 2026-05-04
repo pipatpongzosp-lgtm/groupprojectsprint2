@@ -13,10 +13,10 @@ import {
 const Sidebar = () => {
   // สร้าง Array ของเมนูไว้ จะได้เพิ่มลดง่ายๆ
   const menuItems = [
-    { name: "แผนผัง", path: "/waiter/tables", icon: LayoutGrid },
+    { name: "แผนผัง", path: "/shared/tables", icon: LayoutGrid },
     { name: "ออเดอร์", path: "/cashier/orders", icon: ClipboardList },
     { name: "เก็บเงิน", path: "/cashier/checkout", icon: Banknote },
-    { name: "ประวัติ", path: "/history", icon: History },
+    { name: "ประวัติ", path: "/cashier/history", icon: History },
     { name: "ตั้งค่า", path: "/settings", icon: Settings },
   ];
 
