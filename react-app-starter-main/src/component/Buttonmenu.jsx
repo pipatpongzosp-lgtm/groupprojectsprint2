@@ -25,6 +25,7 @@ const DataRow = ({ rowId, imageUrl, data1, data2, data3, data4, onButton1, onBut
           <button
             className="flex-1 md:flex-none bg-accent hover:bg-orange-700 text-neutral px-4 py-2 rounded font-semibold transition duration-300"
             onClick={onButton1}
+
           >
             Button 1
           </button>
