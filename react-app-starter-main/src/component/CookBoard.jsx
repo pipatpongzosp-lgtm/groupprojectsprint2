@@ -33,11 +33,11 @@ export default function CookBoard() {
         <div className="flex flex-row justify-center gap-[5vh] bg-gray-200 min-h-screen min-w-screen 
                         max-md:flex-col max-md:justify-start max-md:gap-y-[5vh]">
             <div className="flex flex-col bg-amber-300 w-[45%] p-[.5vh] max-md:w-full max-md:h-[45vh] overflow-scroll">
-                <h1>In Kitchen</h1>
+                <h1 className=" font-bold self-center text-blue-600">In Kitchen</h1>
                 {showList("doing")}
             </div>
             <div className="flex flex-col bg-amber-300 w-[45%] p-[.5vh] max-md:w-full max-md:h-[45vh] overflow-scroll">
-                <h1>Finished</h1>
+                <h1 className="font-bold self-center text-red-600">Finished</h1>
                 {showList("finished")}
             </div>
         </div>
