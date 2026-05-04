@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { OrdersContext } from "../context/ordersContext/OrdersContext";
-import MenuList from "./MenuList";
+import MenuList from "../component/MenuList";
 
 export default function CookBoard() {
     const { orderList } = useContext(OrdersContext);
