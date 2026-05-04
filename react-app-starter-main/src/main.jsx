@@ -5,8 +5,8 @@ import App from './App.jsx'
 import {OrdersProvider} from './context/ordersContext/OrdersProvider'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <OrdersProvider> 
+  <OrdersProvider>
     <App />
- </OrdersProvider>   
+ </OrdersProvider>
   </StrictMode>,
 )

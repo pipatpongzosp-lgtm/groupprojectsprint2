@@ -4,7 +4,7 @@ import { OrdersContext } from "../context/ordersContext/OrdersContext";
 export default function MenuList({ order, list }) {
     const { orderList, setOrderList } = useContext(OrdersContext);
     const [countdownTime, setTime] = useState(list.countdownTime);
-    
+
     useEffect(() => {
         let interval = null;
 
@@ -47,21 +47,16 @@ export default function MenuList({ order, list }) {
        updateOrderStatus(nextStatus);
     };
 
-
-
     const wantCancel=()=>((confirm("cancel this Menu")?updateOrderStatus("cancel"):console.log("NOchange")))
     const wantRedoMenu=()=>((confirm("redo this Menu")?updateOrderStatus("InKitchen"):console.log("NOchange")))
-
-
-
 
     return (
         <div className={` m-2 border rounded shadow-sm p-2 ${(list.status==="cancel")?"bg-red-500":"bg-gray-100"}`}>
             <div className="text-xs text-gray-500 font-bold">Order ID: {order.orderId}</div>
-            <div 
+            <div
                 className={`p-2 cursor-pointer rounded transition ${
                     list.status === "Cook" ? "bg-orange-100 hover:bg-orange-200" : "hover:bg-gray-100"
-                }`} 
+                }`}
                 onClick={countTimeHandler}
             >
                 <div className={"flex justify-between items-center "}>

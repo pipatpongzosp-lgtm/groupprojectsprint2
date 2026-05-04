@@ -30,7 +30,7 @@ export default function CookBoard() {
     )
 
     return (
-        <div className="flex flex-row justify-center gap-[5vh] bg-gray-200 min-h-screen min-w-screen 
+        <div className="flex flex-row justify-center gap-[5vh] bg-gray-200 min-h-screen min-w-screen
                         max-md:flex-col max-md:justify-start max-md:gap-y-[5vh]">
             <div className="flex flex-col bg-amber-300 w-[45%] p-[.5vh] max-md:w-full max-md:h-[45vh] overflow-scroll">
                 <h1>In Kitchen</h1>
