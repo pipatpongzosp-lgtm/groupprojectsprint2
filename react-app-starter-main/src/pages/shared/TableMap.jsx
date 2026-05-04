@@ -4,6 +4,7 @@ import TableControls from "../../component/shared/TableControls";
 import FloorPlanView from "../../component/shared/FloorPlanView";
 import TableListView from "../../component/shared/TableListView";
 import TableActionModal from "../../component/shared/TableActionModal";
+import Sidebar from "../../component/shared/SideBar";
 
 const TableMap = () => {
   // 1. Data State (จำลองข้อมูลโต๊ะ)
@@ -181,39 +182,42 @@ const TableMap = () => {
   };
 
   return (
-    <div className="p-6 font-['IBM_Plex_Sans_Thai'] h-full flex flex-col">
-      <TableMapHeader freeCount={freeCount} occCount={occCount} />
+    <div className="flex bg-[#eeeeee] min-h-screen font-['IBM_Plex_Sans_Thai']">
+      <Sidebar />
+      <main className="flex-1 ml-60 p-6 md:p-10 flex flex-col h-screen overflow-y-auto">
+        <TableMapHeader freeCount={freeCount} occCount={occCount} />
 
-      <TableControls
-        currentFilter={currentFilter}
-        setFilter={setCurrentFilter}
-        currentView={currentView}
-        setView={setCurrentView}
-      />
-
-      {currentView === "floor" ? (
-        <FloorPlanView
-          tables={filteredTables}
-          onOpenModal={(id) => setModalState({ isOpen: true, tableId: id })}
-          formatTime={formatTime}
+        <TableControls
+          currentFilter={currentFilter}
+          setFilter={setCurrentFilter}
+          currentView={currentView}
+          setView={setCurrentView}
         />
-      ) : (
-        <TableListView
-          tables={filteredTables}
+
+        {currentView === "floor" ? (
+          <FloorPlanView
+            tables={filteredTables}
+            onOpenModal={(id) => setModalState({ isOpen: true, tableId: id })}
+            formatTime={formatTime}
+          />
+        ) : (
+          <TableListView
+            tables={filteredTables}
+            statusLabel={statusLabel}
+            shapeLabel={shapeLabel}
+            onOpenModal={(id) => setModalState({ isOpen: true, tableId: id })}
+            formatTime={formatTime}
+          />
+        )}
+
+        <TableActionModal
+          isOpen={modalState.isOpen}
+          onClose={() => setModalState({ isOpen: false, tableId: null })}
+          table={selectedTable}
           statusLabel={statusLabel}
-          shapeLabel={shapeLabel}
-          onOpenModal={(id) => setModalState({ isOpen: true, tableId: id })}
-          formatTime={formatTime}
+          onUpdateStatus={handleUpdateStatus}
         />
-      )}
-
-      <TableActionModal
-        isOpen={modalState.isOpen}
-        onClose={() => setModalState({ isOpen: false, tableId: null })}
-        table={selectedTable}
-        statusLabel={statusLabel}
-        onUpdateStatus={handleUpdateStatus}
-      />
+      </main>
     </div>
   );
 };
