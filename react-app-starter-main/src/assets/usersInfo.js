@@ -2,8 +2,8 @@ import { Suspense } from "react";
 
 export const usersInfo=[
 {
- username:"SunSun15",
- password:"23333555555",
+ username:"SunSun",
+ password:"1234567",
  name:"Sun",
  email:"Sun@gmail.com",
  surname:"Piriya",

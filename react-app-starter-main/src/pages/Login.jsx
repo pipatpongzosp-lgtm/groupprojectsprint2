@@ -24,8 +24,8 @@ const checkLogin=()=>{
             setLoginText("LoginSuccessful");
             if(user.role==="customer")
              navigate('/menu');
-            else{
-
+            else if(user.role==="cook"){
+             navigate('/cookBoard');
             }
         }
         else{setLoginText("worngPassword");}
