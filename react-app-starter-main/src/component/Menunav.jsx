@@ -6,7 +6,7 @@ const DataRow = ({ rowId, imageUrl, data1, data2, data3, data4, onButton1, onBut
     <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         {/* Image Section */}
-        <div className="w-20 h-20 flex-shrink-0">
+        <div className="w-20 h-20 shrink-0">
           <img
             src={imageUrl || 'https://via.placeholder.com/80'}
             alt={`Row ${rowId} Image`}
