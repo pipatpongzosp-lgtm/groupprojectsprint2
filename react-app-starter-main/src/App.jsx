@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbarmenu from "./component/Navbarmenu";
-import CookBoard from "./component/CookBoard";
+import CookBoard from "./pages/CookBoard";
 import Index from "./Pages/Index";
 import Order from "./Pages/Order";
 import Buttonmenu from "./component/Buttonmenu";
