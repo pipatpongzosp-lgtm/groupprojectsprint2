@@ -1,6 +1,6 @@
 // export default App;
 import { useState } from 'react';
-import "../App.css";
+import "@/App.css";
 
 
 // --- ดึงข้อมูลจากรูป Sitemap (i18n simulated) ---

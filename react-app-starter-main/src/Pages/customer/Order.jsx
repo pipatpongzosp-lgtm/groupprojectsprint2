@@ -1,6 +1,5 @@
-
 import React, { useContext } from "react";
-import { OrdersContext } from "../context/ordersContext/OrdersContext";
+import { OrdersContext } from "../../context/ordersContext/OrdersContext";
 
 const OrderItem = ({ item, orderId, onUpdateQty, onRemove }) => {
   return (
