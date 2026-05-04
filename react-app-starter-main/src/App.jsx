@@ -11,5 +11,5 @@ export default function App() {
         <Route path="/order" element={<Buttonmenu />} />
       </Routes>
     </Router>
-  )
+  );
 }
