@@ -4,8 +4,6 @@ export const orders=[
         {id:1,name:"fire_chicken",quantity:2,countdownTime:120,status:"InKitchen"},
         {id:2,name:"burger",quantity:1,countdownTime:120,status:"finished"},
         {id:3,name:"frenchFire",quantity:2,countdownTime:120,status:"InKitchen"}
-
-
      ],
      type:"delivery",
      orderDate:new Date().setDate("2026-04-05"),
