@@ -1,5 +1,9 @@
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Menunav from './component/Menunav'
+import CookBoard from './component/CookBoard'
+import Index from './testfeature/Index'
+
 
 export default function App() {
   return (
@@ -12,5 +16,6 @@ export default function App() {
       </Routes>
     </Router>
   )
+
 }
 
