@@ -28,9 +28,9 @@ export default function App() {
         <Route path="/cashier/orders" element={<OrderList />} />
         <Route path="/cashier/history" element={<OrderHistory />} />
         <Route path="/menu" element={<Buttonmenu />} />
-        <Route path="/cookBoard" element={<CookBoard />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
+        <Route path="/cookBoard" element={<CookBoard/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
       </Routes>
     </Router>
   );
