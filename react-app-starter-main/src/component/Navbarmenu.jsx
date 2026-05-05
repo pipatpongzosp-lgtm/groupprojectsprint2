@@ -21,7 +21,7 @@ const Navbarmenu = ({ t, lang, setLang }) => {
             <img 
               src={Logo} 
               alt="Logo" 
-              className="h-37 w-auto max-w-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]" 
+              className="h-37 w-auto max-w-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] float-animation" 
             />
           </Link>
         </div>
