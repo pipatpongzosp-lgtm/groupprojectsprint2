@@ -15,7 +15,7 @@ const Sidebar = () => {
     { name: "ออเดอร์", icon: ClipboardList, path: "/waiter/orders" },
     { name: "เก็บเงิน", icon: Banknote, path: "/cashier/checkout" },
     { name: "ประวัติ", icon: History, path: "/cashier/history" },
-    { name: "ตั้งค่า", icon: Settings, path: "/settings" },
+    { name: "ตั้งค่า", icon: Settings, p                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ath: "/settings" },
   ];
 
   return (
@@ -34,8 +34,12 @@ const Sidebar = () => {
                 ${isActive ? "text-[#E4002B]" : "text-white hover:opacity-70 hover:scale-110"}
               `}
             >
-              <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
-              <span>{item.name}</span>
+              {({ isActive }) => (
+                <>
+                  <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
+                  <span>{item.name}</span>
+                </>
+              )}
             </NavLink>
           );
         })}
@@ -54,8 +58,12 @@ const Sidebar = () => {
                 ${isActive ? "text-[#E4002B]" : "text-white"}
               `}
             >
-              <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
-              <span>{item.name}</span>
+              {({ isActive }) => (
+                <>
+                  <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+                  <span>{item.name}</span>
+                </>
+              )}
             </NavLink>
           );
         })}

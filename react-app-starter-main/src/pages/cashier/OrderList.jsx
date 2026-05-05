@@ -74,7 +74,7 @@ const OrderList = () => {
         {/* Header Area */}
         <header className="mb-8">
           <h1 className="font-['Bebas_Neue'] text-5xl tracking-wide text-[#242424] mb-1">
-            CASHIER <span className="text-[#e4002b]">DASHBOARD</span>
+            CASHIER <span className="text-[#e4002b]">ORDER-LIST</span>
           </h1>
           <p className="text-[#888888] font-medium">
             จัดการรายการออเดอร์และชำระเงิน
@@ -112,8 +112,8 @@ const OrderList = () => {
 
           {/* ================= ขวา: สั่งกลับบ้าน / เดลิเวอรี่ ================= */}
           <div className="flex flex-col gap-4">
-            <div className="border-b-[3px] border-[#e4002b] pb-2 mb-2">
-              <h2 className="font-['Bebas_Neue'] text-3xl tracking-wide text-[#e4002b] leading-none">
+            <div className="border-b-[3px] border-[#242424] pb-2 mb-2">
+              <h2 className="font-['Bebas_Neue'] text-3xl tracking-wide text-[#242424] leading-none">
                 TAKE-AWAY / DELIVERY{" "}
                 <span className="text-xl text-[#888888]">
                   ({takeawayDeliveryOrders.length})
