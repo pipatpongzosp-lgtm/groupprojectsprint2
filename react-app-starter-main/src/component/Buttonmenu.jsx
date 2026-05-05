@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Navbarmenu from './Navbarmenu';
 
 const DataRow = ({ rowId, imageUrl, data1, data2, data3, data4, onButton1, onButton2, onButton3 }) => {
   return (
@@ -119,8 +118,7 @@ const Buttonmenu = () => {
 
   return (
     <div className="min-h-screen bg-neutral">
-      <Navbarmenu />
-      <main className="p-4 md:p-8 lg:px-20 max-w-[1600px] mx-auto mt-4 mb-8">
+      <main className="p-4 md:p-8 lg:px-20 max-w-screen mx-auto mt-4 mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Left Box (Empty) */}
           <div className="lg:col-span-2 bg-white rounded-lg border border-gray-300 shadow-sm min-h-96 p-4"></div>
