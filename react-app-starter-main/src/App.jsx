@@ -29,8 +29,7 @@ export default function App() {
           <Route path="home" element={<Index />} />
           <Route path="order" element={<Order />} />
           <Route path="menu" element={<MenuPage />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
+     
 
           {/* ---- โซนหน้าของ พนักงาน (Cashier / Waiter / Kitchen) ---- */}
           <Route path="cashier/checkout" element={<CheckoutPage />} />
@@ -40,6 +39,16 @@ export default function App() {
           <Route path="cookBoard" element={<CookBoard />} />
 
         </Route>
+        {/* เพิ่ม Route ของ chasier / shared (with waiter)  */}
+        <Route path="/cashier/checkout" element={<CheckoutPage />} />
+        <Route path="/shared/tables" element={<TableMap />} />
+        <Route path="/cashier/orders" element={<OrderList />} />
+        <Route path="/cashier/history" element={<OrderHistory />} />
+        <Route path="/menu" element={<Buttonmenu />} />
+       
+        {/* <Route path="/login" element={<Login/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
+         <Route path="/cookBoard" element={<CookBoard/>}></Route> */}
       </Routes>
     </Router>
   );

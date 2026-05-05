@@ -15,7 +15,50 @@
 .bg-orange { background-color: var(--orange); }
 .bg-cream { background-color: var(--cream); }
 
-/* Theme Helpers (ถ้าคุณกำหนดไว้ใน tailwind.config.js แล้วส่วนนี้ไม่จำเป็นครับ) */
-.theme-street .theme-street\:font-graffiti { font-family: 'Permanent Marker', cursive; }
-.theme-genz .theme-genz\:rounded-3xl { border-radius: 1.5rem; }
-.theme-genz .theme-genz\:rounded-full { border-radius: 9999px; }
+/* --- 90s Vibe MODERN THEME --- */
+.theme-90s button {
+  box-shadow: 4px 4px 0px #000000;
+  border: 2px solid #000000;
+}
+.theme-90s button:active {
+  box-shadow: 2px 2px 0px #000000;
+  transform: translate(2px, 2px);
+}
+.theme-90s .bg-inset {
+  border: 2px solid #000000;
+  box-shadow: -4px -4px 0px #000000 inset;
+}
+
+/* --- THAI MODERN THEME --- */
+/* ตัวอย่างลายไทยที่ border-l หรือ border-pattern */
+.theme-thai .border-thai-pattern {
+  border-image: url('thai-pattern.png') 30 round; /* จำเป็นต้องมีภาพ thai-pattern.png */
+}
+.theme-thai .thai-border-pattern {
+  border: 1px solid rgba(207, 10, 10, 0.2);
+}
+
+/* --- ASIA LUXURY ART THEME --- */
+.theme-luxury .minimal-border {
+  border-top: 1px solid rgba(220, 95, 0, 0.3);
+}
+
+/* --- ABSTRACT MODERN ART THEME --- */
+/* สามารถใช้ clip-path หรือ background overlays แปลกๆ */
+.theme-abstract .p-4 {
+  clip-path: polygon(10px 10px, 100% 0, 90% 90%, 0 100%);
+}
+
+/* --- FLOATING LOGO ANIMATION --- */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
