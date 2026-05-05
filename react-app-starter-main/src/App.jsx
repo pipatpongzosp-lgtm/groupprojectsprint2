@@ -10,8 +10,10 @@ import TableMap from "./pages/shared/TableMap";
 import OrderList from "./pages/cashier/OrderList";
 import Footer from "./component/Footer";
 import CookBoard from "./pages/CookBoard";
-import { translations } from "./locals/translations";
+import { translations } from "./locales/translations";
 import Navbarmenu from "./component/Navbarmenu";
+import MenuPage from "./pages/customer/MenuPage";
+
 
 export default function App() {
   const [lang, setLang] = useState("en");
@@ -29,7 +31,7 @@ export default function App() {
         <Route path="/cashier/checkout" element={<CheckoutPage />} />
         <Route path="/shared/tables" element={<TableMap />} />
         <Route path="/cashier/orders" element={<OrderList />} />
-        <Route path="/menu" element={<Buttonmenu />} />
+        <Route path="/menu" element={<MenuPage />} />
         <Route path="/cookBoard" element={<CookBoard />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
