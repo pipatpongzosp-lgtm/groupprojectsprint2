@@ -34,7 +34,7 @@ export default function MenuList({ order, list }) {
             }
             return o;
         });
-        setOrderList(updatedgitOrders);
+        setOrderList(updatedOrders);
     }
     const countTimeHandler = () => {
         let nextStatus = list.status;
