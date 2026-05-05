@@ -74,41 +74,6 @@ const MenuPage = () => {
 
   return (
     <div className="min-h-screen bg-[#eeeeee] font-['IBM_Plex_Sans_Thai'] text-[#242424]">
-      {/* --- TOP NAV (รวมไว้ที่นี่ก่อน หรือจะแยกเป็น Header ก็ได้) --- */}
-      <header className="bg-[#242424] text-[#eeeeee] shadow-lg sticky top-0 z-40">
-        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <NavLink
-            to="/"
-            className="text-3xl font-bold text-white font-['Bebas_Neue'] flex items-center gap-2"
-          >
-            <HandFist className="h-8 w-8 text-[#e4002b]" />
-            <span>SERIOUS PUNCH</span>
-          </NavLink>
-
-          <div className="hidden md:flex space-x-8 items-center">
-            <ul className="flex space-x-6 font-medium">
-              <li>
-                <NavLink to="/" className="hover:text-[#e4002b] transition">
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/menu" className="text-[#e4002b] font-bold">
-                  Menu
-                </NavLink>
-              </li>
-            </ul>
-
-            <button
-              onClick={() => setIsCartOpen(true)}
-              className={`flex items-center gap-4 px-4 py-2 rounded-full transition-all duration-300 cursor-pointer ${toastMsg ? "bg-[#e4002b] scale-110" : "bg-[#333333] hover:bg-[#e4002b]"}`}
-            >
-              <ShoppingCart className="w-5 h-5 text-white" />
-              <span className="font-bold text-white">{totalItems}</span>
-            </button>
-          </div>
-        </nav>
-      </header>
 
       {/* --- MAIN LAYOUT --- */}
       <div className="flex flex-col md:flex-row relative">

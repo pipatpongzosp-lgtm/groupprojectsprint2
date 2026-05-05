@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 const Navbarmenu = ({ t, lang, setLang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // 2. ฟังก์ชันสลับภาษา
+  // 2. ฟังก์ชันสลับภาษา (แก้ไขให้เป็นพิมพ์ใหญ่ TH, EN เพื่อให้ตรงกับ translations.js)
   const toggleLang = () => {
-    setLang(lang === "en" ? "th" : "en");
+    setLang(lang === "EN" ? "TH" : "EN");
   };
 
   return (
@@ -36,7 +36,7 @@ const Navbarmenu = ({ t, lang, setLang }) => {
               onClick={toggleLang} 
               className="uppercase px-3 py-1 bg-neutral/20 text-neutral rounded hover:bg-secondary transition duration-300 font-bold"
             >
-              {lang === "en" ? "TH" : "EN"}
+              {lang === "EN" ? "TH" : "EN"}
             </button>
 
             <button className="bg-secondary hover:bg-accent text-neutral px-6 py-2 rounded-full font-semibold transition duration-300">
@@ -52,7 +52,7 @@ const Navbarmenu = ({ t, lang, setLang }) => {
             onClick={toggleLang} 
             className="uppercase px-2 py-1 bg-neutral/20 text-neutral text-sm rounded hover:bg-secondary transition duration-300 font-bold"
           >
-            {lang === "en" ? "TH" : "EN"}
+            {lang === "EN" ? "TH" : "EN"}
           </button>
 
           <button
