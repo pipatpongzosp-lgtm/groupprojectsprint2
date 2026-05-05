@@ -1,17 +1,32 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/picture/Logo.png';
+import Slogan from '../assets/picture/slogan.png';
 
 const Navbarmenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-primary text-neutral shadow-lg">
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link to="/" className="text-2xl font-bold text-accent">
-            LOGO
+      <nav className="container mx-auto px-4 py-4 flex justify-between items-center relative">
+        {/* Logo Container */}
+        <div className="relative w-36 h-12 flex items-center">
+          <Link to="/" className="absolute -top-4 left-0 z-50 transition-transform hover:scale-105">
+            <img 
+              src={Logo} 
+              alt="Logo" 
+              className="h-37 w-auto max-w-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]" 
+            />
           </Link>
+        </div>
+
+        {/* Slogan Image - Center */}
+        <div className="hidden md:flex flex-1 justify-center px-4">
+          <img 
+            src={Slogan} 
+            alt="เพราะเราไม่ล้อเล่นเรื่องไก่ทอด" 
+            className="h-17 w-auto object-contain"
+          />
         </div>
 
         {/* Desktop Menu */}
